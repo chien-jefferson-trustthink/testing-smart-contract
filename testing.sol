@@ -1,26 +1,14 @@
-pragma solidity >=0.4.22 <0.7.0;
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity >=0.4.16 <0.7.0;
 
-/**
- * @title Storage
- * @dev Store & retreive value in a variable
- */
-contract Storage {
+contract SimpleStorage {
+    uint storedData;
 
-    uint256 number;
-
-    /**
-     * @dev Store value in variable
-     * @param num value to store
-     */
-    function store(uint256 num) public {
-        number = num;
+    function set(uint x) public {
+        storedData = x;
     }
 
-    /**
-     * @dev Return value 
-     * @return value of 'number'
-     */
-    function retreive() public view returns (uint256){
-        return number;
+    function get() public view returns (uint) {
+        return storedData;
     }
 }
